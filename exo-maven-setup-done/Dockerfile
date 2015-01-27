@@ -11,12 +11,14 @@ RUN cd TOMCAT_HOME/gatein/conf/ && \
 
 RUN cd TOMCAT_HOME/gatein/conf/ && \
 	mkdir portal && cd portal && mkdir portal && \
-	curl -L -o configuration.xml
+	curl -L -o configuration.xml https://raw.githubusercontent.com/exo-docker/exo-maven/master/exo-maven-setup-done/configuration.xml
 
 # Start eXo Platform Tomcat
 
 RUN cd TOMCAT_HOME/ && \
 	./start_eXo.sh
+
+RUN ./stop_eXo.sh
 
 
 
