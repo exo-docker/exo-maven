@@ -11,7 +11,7 @@ RUN cd $TOMCAT_HOME/gatein/conf/ && \
 # Configuration for default users
 
 RUN cd $TOMCAT_HOME/gatein/conf/ && \
-	mkdir -p portal/portal && cd portal/portal \
+	mkdir portal && cd portal && mkdir portal && cd portal && \
 	curl -L -o configuration.xml https://raw.githubusercontent.com/exo-docker/exo-maven/master/exo-maven-setup-done/configuration.xml
 
 # Start then stop eXo Platform Tomcat
