@@ -15,6 +15,6 @@ RUN cd $TOMCAT_HOME/gatein/conf/ && \
 	curl -L -o configuration.xml https://raw.githubusercontent.com/exo-docker/exo-maven/master/exo-maven-setup-done/configuration.xml
 
 # Start then stop eXo Platform Tomcat
-RUN cd $TOMCAT_HOME
+RUN cd $TOMCAT_HOME && \
 	curl -L -o start_and_auto_shutdown_tomcat.sh https://raw.githubusercontent.com/exo-docker/exo-maven/master/exo-maven-setup-done/start_and_auto_shutdown_tomcat.sh && \
 	chmod +x start_and_auto_shutdown_tomcat.sh && ./start_and_auto_shutdown_tomcat.sh
